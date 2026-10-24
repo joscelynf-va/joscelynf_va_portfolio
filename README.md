@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,23 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #F7FCFC;
+            --bg-main: #FAFAF8;
             --bg-card: #FFFFFF;
-            --primary-dark: #0A2222;        /* Deep Charcoal Teal */
-            --teal-bright: #00A896;         /* Core Vibrant Teal */
-            --teal-soft: #E0F2F1;           /* Soft Teal Tint */
-            --orange-bright: #FF6B35;       /* Core Vibrant Orange */
-            --orange-soft: #FFF0EB;         /* Soft Orange Tint */
-            --text-dark: #101E1E;
-            --text-muted: #4B5A5A;
-            --border-light: #D2E5E2;
+            --primary-dark: #0F2C2C;       /* Deep Teal Slate */
+            --teal-bright: #00A896;       /* Electric Vibrant Teal */
+            --teal-soft: #E0F2F1;         /* Pale Teal Tint */
+            --orange-bright: #FF6B35;     /* Vibrant Warm Orange */
+            --orange-soft: #FFF3ED;       /* Pale Orange Tint */
+            --text-dark: #1E292B;
+            --text-muted: #526062;
+            --border-light: #E2ECE9;
             --radius-sm: 10px;
             --radius-md: 18px;
-            --radius-lg: 26px;
-            --shadow-soft: 0 12px 32px rgba(0, 168, 150, 0.1);
-            --shadow-hover: 0 18px 40px rgba(255, 107, 53, 0.2);
-            /* Two-Tone Teal & Orange Cheetah Pattern */
-            --cheetah-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M12 10c2-3 6-3 8 0s1 7-2 8-7-1-6-8zM38 15c3-2 7 0 7 4s-3 6-6 4-3-6-1-8zM22 35c3-1 6 2 5 5s-5 4-7 1 0-5 2-6zM45 40c2-3 6-2 7 1s-2 6-5 5-3-4-2-6zM10 48c2-1 4 1 4 3s-3 4-5 2 0-4 1-5z' fill='%2300A896' fill-opacity='0.28'/%3E%3Cpath d='M15 13c1-1 3-1 4 0s0 3-1 4-3 0-3-1 0-2 0-3zM40 17c1-1 3 0 3 2s-1 3-3 2-1-3 0-4zM24 37c1 0 3 1 2 3s-2 2-3 1 0-3 1-4z' fill='%23FF6B35' fill-opacity='0.55'/%3E%3C/svg%3E");
+            --radius-lg: 28px;
+            --shadow-soft: 0 12px 32px rgba(0, 168, 150, 0.08);
+            --shadow-hover: 0 18px 40px rgba(255, 107, 53, 0.15);
+            /* Chic Cheetah Pattern Data URI */
+            --cheetah-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M12 10c2-3 6-3 8 0s1 7-2 8-7-1-6-8zM38 15c3-2 7 0 7 4s-3 6-6 4-3-6-1-8zM22 35c3-1 6 2 5 5s-5 4-7 1 0-5 2-6zM45 40c2-3 6-2 7 1s-2 6-5 5-3-4-2-6zM10 48c2-1 4 1 4 3s-3 4-5 2 0-4 1-5z' fill='%230F2C2C' fill-opacity='0.18'/%3E%3Cpath d='M15 13c1-1 3-1 4 0s0 3-1 4-3 0-3-1 0-2 0-3zM40 17c1-1 3 0 3 2s-1 3-3 2-1-3 0-4zM24 37c1 0 3 1 2 3s-2 2-3 1 0-3 1-4z' fill='%23FF6B35' fill-opacity='0.35'/%3E%3C/svg%3E");
         }
 
         * {
@@ -42,12 +42,12 @@
             scroll-behavior: smooth;
         }
 
-        /* Cheetah Pattern Accent Bar */
-        .cheetah-bar {
-            height: 10px;
-            background-color: var(--teal-soft);
+        /* Cheetah Accent Strip */
+        .cheetah-border-strip {
+            height: 6px;
+            background-color: var(--orange-soft);
             background-image: var(--cheetah-pattern);
-            background-size: 45px 45px;
+            background-size: 40px 40px;
             width: 100%;
         }
 
@@ -56,20 +56,19 @@
             background-color: var(--primary-dark);
             color: #FFFFFF;
             text-align: center;
-            padding: 12px 20px;
+            padding: 10px 20px;
             font-size: 0.875rem;
-            font-weight: 700;
+            font-weight: 600;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            border-bottom: 2px solid var(--teal-bright);
         }
 
         .pulse-badge {
             display: inline-block;
-            width: 10px;
-            height: 10px;
+            width: 9px;
+            height: 9px;
             background-color: var(--orange-bright);
             border-radius: 50%;
             box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
@@ -86,7 +85,7 @@
         header {
             position: sticky;
             top: 0;
-            background: rgba(247, 252, 252, 0.94);
+            background: rgba(250, 250, 248, 0.92);
             backdrop-filter: blur(14px);
             z-index: 1000;
             border-bottom: 1px solid var(--border-light);
@@ -137,7 +136,7 @@
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
-            font-weight: 700;
+            font-weight: 600;
             font-size: 0.95rem;
             transition: color 0.2s ease;
         }
@@ -146,25 +145,25 @@
             color: var(--orange-bright);
         }
 
-        .btn-orange {
+        .btn-primary {
             background-color: var(--orange-bright);
             color: #FFFFFF;
             padding: 12px 26px;
             border-radius: var(--radius-sm);
             text-decoration: none;
-            font-weight: 800;
+            font-weight: 700;
             font-size: 0.95rem;
             display: inline-block;
             transition: all 0.25s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(255, 107, 53, 0.35);
+            box-shadow: 0 4px 14px rgba(255, 107, 53, 0.3);
         }
 
-        .btn-orange:hover {
+        .btn-primary:hover {
             background-color: #E85D04;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.45);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
         }
 
         .btn-teal {
@@ -173,19 +172,19 @@
             padding: 12px 26px;
             border-radius: var(--radius-sm);
             text-decoration: none;
-            font-weight: 800;
+            font-weight: 700;
             font-size: 0.95rem;
             display: inline-block;
             transition: all 0.25s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(0, 168, 150, 0.35);
+            box-shadow: 0 4px 14px rgba(0, 168, 150, 0.3);
         }
 
         .btn-teal:hover {
             background-color: #00897B;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 168, 150, 0.45);
+            box-shadow: 0 6px 20px rgba(0, 168, 150, 0.4);
         }
 
         /* Container */
@@ -213,9 +212,9 @@
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 20px;
-            border: 1px solid rgba(0, 168, 150, 0.3);
+            border: 1px solid rgba(0, 168, 150, 0.2);
         }
 
         .hero-title {
@@ -228,6 +227,7 @@
 
         .hero-title span {
             color: var(--orange-bright);
+            position: relative;
         }
 
         .hero-subtitle {
@@ -237,22 +237,21 @@
             max-width: 580px;
         }
 
-        /* Cheetah Frame Card */
-        .cheetah-frame {
+        /* Cheetah Highlight Box */
+        .cheetah-card-frame {
             position: relative;
             background-color: var(--orange-soft);
             background-image: var(--cheetah-pattern);
-            background-size: 55px 55px;
-            padding: 14px;
+            background-size: 50px 50px;
+            padding: 12px;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-soft);
-            border: 2px solid var(--teal-bright);
         }
 
         .counter-card {
             background-color: #FFFFFF;
             border: 1px solid var(--border-light);
-            border-radius: calc(var(--radius-lg) - 8px);
+            border-radius: calc(var(--radius-lg) - 6px);
             padding: 32px;
             display: flex;
             flex-direction: column;
@@ -303,13 +302,13 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
-            border: 1px solid rgba(0, 168, 150, 0.3);
+            border: 1px solid rgba(0, 168, 150, 0.2);
         }
 
         .pill-badge.orange-pill {
             background-color: var(--orange-soft);
             color: var(--orange-bright);
-            border-color: rgba(255, 107, 53, 0.3);
+            border-color: rgba(255, 107, 53, 0.2);
         }
 
         /* Section Headings */
@@ -331,16 +330,6 @@
             font-size: 1.05rem;
         }
 
-        .cheetah-divider {
-            height: 6px;
-            width: 80px;
-            margin: 16px auto 0 auto;
-            background-color: var(--teal-soft);
-            background-image: var(--cheetah-pattern);
-            background-size: 30px 30px;
-            border-radius: 3px;
-        }
-
         /* Services Grid */
         .services-grid {
             display: grid;
@@ -359,16 +348,14 @@
             overflow: hidden;
         }
 
-        .service-card::before {
+        .service-card::top {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 6px;
-            background-color: var(--teal-bright);
-            background-image: var(--cheetah-pattern);
-            background-size: 35px 35px;
+            height: 4px;
+            background: var(--teal-bright);
         }
 
         .service-card:hover {
@@ -413,9 +400,8 @@
         }
 
         .pricing-card.featured {
-            border: 3px solid var(--orange-bright);
+            border: 2px solid var(--orange-bright);
             box-shadow: var(--shadow-hover);
-            background-image: linear-gradient(to bottom, #FFFFFF 92%, var(--orange-soft) 100%);
         }
 
         .featured-badge {
@@ -430,7 +416,6 @@
             padding: 6px 14px;
             border-radius: 14px;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
         }
 
         .price {
@@ -463,11 +448,12 @@
         }
 
         .feature-list li::before {
-            content: "🐆";
-            font-size: 0.85rem;
+            content: "✦";
+            color: var(--orange-bright);
+            font-weight: bold;
         }
 
-        /* Asynchronous Boundaries Box */
+        /* Asynchronous Boundaries Banner */
         .boundaries-box {
             background-color: var(--primary-dark);
             color: #FFFFFF;
@@ -475,35 +461,19 @@
             border-radius: var(--radius-lg);
             position: relative;
             overflow: hidden;
-            border-top: 6px solid var(--orange-bright);
-            border-bottom: 6px solid var(--teal-bright);
-        }
-
-        .boundaries-box::before {
-            content: "";
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            background-image: var(--cheetah-pattern);
-            background-size: 60px 60px;
-            opacity: 0.08;
-            pointer-events: none;
         }
 
         .boundaries-box h3 {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
-            color: var(--orange-bright);
+            color: var(--orange-soft);
             margin-bottom: 24px;
-            position: relative;
-            z-index: 1;
         }
 
         .boundaries-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
-            position: relative;
-            z-index: 1;
         }
 
         .boundary-item h4 {
@@ -513,34 +483,19 @@
         }
 
         .boundary-item p {
-            color: #D1E5E2;
+            color: #D1E0DE;
             font-size: 0.9rem;
         }
 
         /* Form Section */
         .form-section {
             background-color: var(--bg-card);
-            border: 2px solid var(--border-light);
+            border: 1px solid var(--border-light);
             border-radius: var(--radius-lg);
             padding: 48px;
             max-width: 820px;
             margin: 0 auto;
             box-shadow: var(--shadow-soft);
-            position: relative;
-        }
-
-        .form-section::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 6px;
-            background-color: var(--teal-bright);
-            background-image: var(--cheetah-pattern);
-            background-size: 30px 30px;
-            border-radius: 3px 3px 0 0;
         }
 
         .form-group {
@@ -574,13 +529,46 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--teal-bright);
-            box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.2);
+            box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.15);
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+        }
+
+        /* Accordion / Hosting Guide */
+        .accordion {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .accordion-header {
+            padding: 20px 24px;
+            background: #FFFFFF;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-content {
+            padding: 24px;
+            display: none;
+            border-top: 1px solid var(--border-light);
+            background: var(--bg-main);
+            font-size: 0.95rem;
+        }
+
+        .accordion-content.open {
+            display: block;
         }
 
         /* Footer */
@@ -591,13 +579,12 @@
             text-align: center;
             font-size: 0.9rem;
             margin-top: 80px;
-            position: relative;
         }
 
         footer a {
             color: var(--orange-bright);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         @media (max-width: 768px) {
@@ -611,8 +598,8 @@
 </head>
 <body>
 
-    <!-- Cheetah Accent Bar -->
-    <div class="cheetah-bar"></div>
+    <!-- Cheetah Pattern Top Border -->
+    <div class="cheetah-border-strip"></div>
 
     <!-- Announcement Banner -->
     <div class="announcement-banner">
@@ -632,7 +619,7 @@
                 <li><a href="#boundaries">Boundaries</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
-            <a href="#inquire" class="btn-orange">Inquire Now</a>
+            <a href="#inquire" class="btn-primary">Inquire Now</a>
         </div>
     </header>
 
@@ -641,10 +628,10 @@
         <!-- Hero Section -->
         <section class="container hero">
             <div>
-                <span class="hero-tag">🐆 Marketing & Systems Strategist</span>
+                <span class="hero-tag">✨ Marketing & Systems Strategist</span>
                 <h1 class="hero-title">High-Impact Operations & <span>Creative Growth</span> for Business Owners</h1>
                 <p class="hero-subtitle">
-                    Streamline your back-office, CRM, and marketing execution with an outcome-driven Virtual Assistant. Bold storytelling and seamless organization delivered asynchronously.
+                    Streamline your back-office, CRM, and marketing execution with an outcome-driven Virtual Assistant. Vibrant storytelling and seamless organization delivered asynchronously.
                 </p>
                 <div class="badge-grid">
                     <span class="pill-badge">B.S. Marketing</span>
@@ -655,7 +642,7 @@
                 </div>
             </div>
 
-            <div class="cheetah-frame">
+            <div class="cheetah-card-frame">
                 <div class="counter-card">
                     <div class="counter-header">
                         <span>Q4 CLIENT CAPACITY</span>
@@ -677,7 +664,6 @@
             <div class="section-header">
                 <h2>Specialized Core Services</h2>
                 <p>Merging administrative precision, CRM proficiency, and vibrant visual content creation.</p>
-                <div class="cheetah-divider"></div>
             </div>
 
             <div class="services-grid">
@@ -709,7 +695,6 @@
             <div class="section-header">
                 <h2>Monthly Retainer Packages</h2>
                 <p>Flat-rate monthly subscriptions focused on deliverables and outcomes—no hourly tracking required.</p>
-                <div class="cheetah-divider"></div>
             </div>
 
             <div class="pricing-grid">
@@ -743,7 +728,7 @@
                             <li>Monthly Analytics & Engagement Report</li>
                         </ul>
                     </div>
-                    <button class="btn-orange" onclick="selectPackage('Tier 2 - Growth & Marketing ($2,000/mo)')">Select Tier 2</button>
+                    <button class="btn-primary" onclick="selectPackage('Tier 2 - Growth & Marketing ($2,000/mo)')">Select Tier 2</button>
                 </div>
 
                 <!-- Tier 3 -->
@@ -839,7 +824,7 @@
                         <textarea id="goals" rows="4" required placeholder="Describe your top 2-3 immediate priorities or back-office bottlenecks..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn-orange" style="width: 100%; padding: 16px; font-size: 1.05rem;">Submit Inquiry to contact.jfva@gmail.com</button>
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 16px; font-size: 1.05rem;">Submit Inquiry to contact.jfva@gmail.com</button>
                 </form>
 
                 <div id="formSuccessMessage" style="display: none; text-align: center; padding: 24px; background: #E0F2F1; border-radius: var(--radius-sm); color: #004D40; margin-top: 20px;">
@@ -848,19 +833,17 @@
                 </div>
             </div>
         </section>
-    </main>
-
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Joscelyn Flores — JF Virtual Assistant. All rights reserved.</p>
         <p style="margin-top: 8px;">Direct Contact: <a href="mailto:contact.jfva@gmail.com">contact.jfva@gmail.com</a></p>
     </footer>
 
-    <!-- Bottom Cheetah Bar -->
-    <div class="cheetah-bar"></div>
+    <!-- Bottom Cheetah Accent Strip -->
+    <div class="cheetah-border-strip"></div>
 
     <script>
-        // Client Capacity Counter
+        // State for Client Counter (Starts at 5 available)
         let availableSpots = 5;
         const totalSpots = 5;
 
@@ -876,14 +859,14 @@
         // Initialize UI
         updateCounterUI();
 
-        // Scroll & Select Package
+        // Scroll and Pre-select Package
         function selectPackage(packageName) {
             const packageDropdown = document.getElementById('packageSelect');
             packageDropdown.value = packageName;
             document.getElementById('inquire').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Form Submission
+        // Form Submission Handling
         document.getElementById('clientInquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -891,20 +874,30 @@
             const email = document.getElementById('email').value;
             const packageChoice = document.getElementById('packageSelect').value;
 
+            // Decrement spot counter on successful inquiry simulation
             if (availableSpots > 0) {
                 availableSpots -= 1;
                 updateCounterUI();
             }
 
+            // Hide form and show success confirmation
             document.getElementById('clientInquiryForm').style.display = 'none';
             const successBox = document.getElementById('formSuccessMessage');
             successBox.style.display = 'block';
             
+            // Construct mailto link as direct fallback
             const subject = encodeURIComponent(`New Inquiry from ${name} - ${packageChoice}`);
-            const body = encodeURIComponent(`Client Name: ${name}\nEmail: ${email}\nPackage: ${packageChoice}\n\nForm submitted via website.`);
+            const body = encodeURIComponent(`Client Name: ${name}\nEmail: ${email}\nPackage: ${packageChoice}\n\nForm submitted via jfva website.`);
             
+            // Trigger mailto window for client inquiry
             window.location.href = `mailto:contact.jfva@gmail.com?subject=${subject}&body=${body}`;
         });
+
+        // Toggle Accordion Guide
+        function toggleAccordion() {
+            const content = document.getElementById('accordionContent');
+            content.classList.toggle('open');
+        }
     </script>
 </body>
 </html>
