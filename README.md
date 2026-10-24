@@ -716,7 +716,7 @@
                             </div>
                             <div>
                                 <p class="text-xs text-stone-400">Q4 Retainer Availability</p>
-                                <p class="text-amber-400 font-bold"><span class="form-spots-count">2</span> Spots Remaining</p>
+                                <p class="text-amber-400 font-bold"><span class="form-spots-count">5</span> Spots Remaining</p>
                             </div>
                         </div>
                     </div>
@@ -910,7 +910,7 @@
     <!-- Interactive JavaScript -->
     <script>
         // Open Spots Counter State
-        let openSpots = 2;
+        let openSpots = 5;
 
         function updateAllSpotCounters() {
             const spotIds = ['header-spots-count', 'mobile-spots-count', 'packages-spots-count'];
