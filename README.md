@@ -1,1013 +1,910 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joscelyn Flores | Virtual Assistant & Marketing/Operations Specialist</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts -->
+    <title>Joscelyn Flores | JF Virtual Assistant & Operations</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            bg: '#FDFBF7',          /* Warm Linen/Beige */
-                            surface: '#F7F3EC',     /* Soft Warm Cream Card */
-                            primary: '#1E293B',     /* Deep Slate / Charcoal */
-                            accent: '#E07A5F',      /* Terracotta / Coral Accent */
-                            accentLight: '#FDF0EC',
-                            sage: '#2A9D8F',        /* Soft Sage Green */
-                            sageDark: '#21786E',
-                            sageLight: '#E8F5F3',
-                            muted: '#64748B',
-                            border: '#E2E8F0'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-main: #F7FCFC;
+            --bg-card: #FFFFFF;
+            --primary-dark: #0A2222;        /* Deep Charcoal Teal */
+            --teal-bright: #00A896;         /* Core Vibrant Teal */
+            --teal-soft: #E0F2F1;           /* Soft Teal Tint */
+            --orange-bright: #FF6B35;       /* Core Vibrant Orange */
+            --orange-soft: #FFF0EB;         /* Soft Orange Tint */
+            --text-dark: #101E1E;
+            --text-muted: #4B5A5A;
+            --border-light: #D2E5E2;
+            --radius-sm: 10px;
+            --radius-md: 18px;
+            --radius-lg: 26px;
+            --shadow-soft: 0 12px 32px rgba(0, 168, 150, 0.1);
+            --shadow-hover: 0 18px 40px rgba(255, 107, 53, 0.2);
+            /* Two-Tone Teal & Orange Cheetah Pattern */
+            --cheetah-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M12 10c2-3 6-3 8 0s1 7-2 8-7-1-6-8zM38 15c3-2 7 0 7 4s-3 6-6 4-3-6-1-8zM22 35c3-1 6 2 5 5s-5 4-7 1 0-5 2-6zM45 40c2-3 6-2 7 1s-2 6-5 5-3-4-2-6zM10 48c2-1 4 1 4 3s-3 4-5 2 0-4 1-5z' fill='%2300A896' fill-opacity='0.28'/%3E%3Cpath d='M15 13c1-1 3-1 4 0s0 3-1 4-3 0-3-1 0-2 0-3zM40 17c1-1 3 0 3 2s-1 3-3 2-1-3 0-4zM24 37c1 0 3 1 2 3s-2 2-3 1 0-3 1-4z' fill='%23FF6B35' fill-opacity='0.55'/%3E%3C/svg%3E");
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            background-color: #FDFBF7;
-            color: #1E293B;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
         }
-        .glass-nav {
-            background: rgba(253, 251, 247, 0.92);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+
+        /* Cheetah Pattern Accent Bar */
+        .cheetah-bar {
+            height: 10px;
+            background-color: var(--teal-soft);
+            background-image: var(--cheetah-pattern);
+            background-size: 45px 45px;
+            width: 100%;
         }
-        .card-shadow {
-            box-shadow: 0 10px 30px -10px rgba(30, 41, 59, 0.05), 0 4px 6px -2px rgba(30, 41, 59, 0.03);
+
+        /* Top Banner */
+        .announcement-banner {
+            background-color: var(--primary-dark);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--teal-bright);
         }
-        .card-shadow-lg {
-            box-shadow: 0 20px 40px -15px rgba(42, 157, 143, 0.18), 0 10px 15px -5px rgba(30, 41, 59, 0.04);
+
+        .pulse-badge {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: var(--orange-bright);
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(255, 107, 53, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(247, 252, 252, 0.94);
+            backdrop-filter: blur(14px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-badge {
+            background: var(--teal-soft);
+            color: var(--teal-bright);
+            border: 1px solid var(--teal-bright);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: var(--orange-bright);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange-bright);
+        }
+
+        .btn-orange {
+            background-color: var(--orange-bright);
+            color: #FFFFFF;
+            padding: 12px 26px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: inline-block;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(255, 107, 53, 0.35);
+        }
+
+        .btn-orange:hover {
+            background-color: #E85D04;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.45);
+        }
+
+        .btn-teal {
+            background-color: var(--teal-bright);
+            color: #FFFFFF;
+            padding: 12px 26px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: inline-block;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 168, 150, 0.35);
+        }
+
+        .btn-teal:hover {
+            background-color: #00897B;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 168, 150, 0.45);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 48px;
+            align-items: center;
+            padding: 30px 0 70px 0;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--teal-soft);
+            color: var(--teal-bright);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 168, 150, 0.3);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.3rem;
+            line-height: 1.15;
+            color: var(--primary-dark);
+            margin-bottom: 24px;
+        }
+
+        .hero-title span {
+            color: var(--orange-bright);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 580px;
+        }
+
+        /* Cheetah Frame Card */
+        .cheetah-frame {
+            position: relative;
+            background-color: var(--orange-soft);
+            background-image: var(--cheetah-pattern);
+            background-size: 55px 55px;
+            padding: 14px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            border: 2px solid var(--teal-bright);
+        }
+
+        .counter-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: calc(var(--radius-lg) - 8px);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .counter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--teal-bright);
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: var(--teal-soft);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, var(--teal-bright), var(--orange-bright));
+            transition: width 0.3s ease;
+        }
+
+        .badge-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .pill-badge {
+            background-color: var(--teal-soft);
+            color: var(--primary-dark);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid rgba(0, 168, 150, 0.3);
+        }
+
+        .pill-badge.orange-pill {
+            background-color: var(--orange-soft);
+            color: var(--orange-bright);
+            border-color: rgba(255, 107, 53, 0.3);
+        }
+
+        /* Section Headings */
+        .section-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .cheetah-divider {
+            height: 6px;
+            width: 80px;
+            margin: 16px auto 0 auto;
+            background-color: var(--teal-soft);
+            background-image: var(--cheetah-pattern);
+            background-size: 30px 30px;
+            border-radius: 3px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background-color: var(--teal-bright);
+            background-image: var(--cheetah-pattern);
+            background-size: 35px 35px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--orange-bright);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        /* Packages Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--orange-bright);
+            box-shadow: var(--shadow-hover);
+            background-image: linear-gradient(to bottom, #FFFFFF 92%, var(--orange-soft) 100%);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -14px;
+            right: 28px;
+            background: var(--orange-bright);
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 14px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .price {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin: 16px 0 8px 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 24px 0 32px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feature-list li {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .feature-list li::before {
+            content: "🐆";
+            font-size: 0.85rem;
+        }
+
+        /* Asynchronous Boundaries Box */
+        .boundaries-box {
+            background-color: var(--primary-dark);
+            color: #FFFFFF;
+            padding: 48px;
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+            border-top: 6px solid var(--orange-bright);
+            border-bottom: 6px solid var(--teal-bright);
+        }
+
+        .boundaries-box::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background-image: var(--cheetah-pattern);
+            background-size: 60px 60px;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .boundaries-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--orange-bright);
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .boundaries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .boundary-item h4 {
+            color: var(--teal-bright);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .boundary-item p {
+            color: #D1E5E2;
+            font-size: 0.9rem;
+        }
+
+        /* Form Section */
+        .form-section {
+            background-color: var(--bg-card);
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            max-width: 820px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+        }
+
+        .form-section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 6px;
+            background-color: var(--teal-bright);
+            background-image: var(--cheetah-pattern);
+            background-size: 30px 30px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            background-color: var(--bg-main);
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--teal-bright);
+            box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: #FFFFFF;
+            padding: 50px 24px 30px 24px;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        footer a {
+            color: var(--orange-bright);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-subtitle { margin: 0 auto 32px auto; }
+            .form-row { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .boundaries-box { padding: 28px; }
         }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-sageLight selection:text-brand-sage">
+<body>
 
-    <!-- Top Announcement Banner -->
-    <div class="bg-brand-primary text-white text-xs sm:text-sm font-medium py-2.5 px-4 text-center border-b border-stone-800 flex items-center justify-center gap-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
-        <span>✨ Currently accepting <strong>5 retainer clients for Q4</strong> | Deliverable-Driven & Asynchronous Support</span>
-        <a href="#packages" class="underline text-brand-accent hover:text-amber-300 ml-1 font-semibold hidden sm:inline">View Spots &rarr;</a>
+    <!-- Cheetah Accent Bar -->
+    <div class="cheetah-bar"></div>
+
+    <!-- Announcement Banner -->
+    <div class="announcement-banner">
+        <span class="pulse-badge"></span>
+        Accepting 5 Retainer Clients for Q4 | Deliverable-Driven & Asynchronous Support
     </div>
 
-    <!-- Header / Navigation -->
-    <header class="sticky top-0 left-0 right-0 z-50 glass-nav border-b border-stone-200/80 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Brand Logo / Name -->
-                <a href="#" class="flex flex-col">
-                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-brand-primary">Joscelyn Flores</span>
-                    <span class="text-[11px] font-bold uppercase tracking-widest text-brand-sage">Virtual Assistant & Marketing Specialist</span>
-                </a>
-
-                <!-- Desktop Nav Links -->
-                <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-stone-700">
-                    <a href="#services" class="hover:text-brand-sage transition-colors">Services</a>
-                    <a href="#packages" class="hover:text-brand-sage transition-colors">Retainer Packages</a>
-                    <a href="#boundaries" class="hover:text-brand-sage transition-colors">Async Boundaries</a>
-                    <a href="#about" class="hover:text-brand-sage transition-colors">About</a>
-                    <a href="#hosting-guide" class="hover:text-brand-sage transition-colors">Free Hosting</a>
-                </nav>
-
-                <!-- Action Button -->
-                <div class="hidden md:flex items-center gap-4">
-                    <span class="text-xs font-bold text-stone-800 bg-brand-sageLight border border-brand-sage/30 px-3 py-1.5 rounded-full flex items-center gap-1.5">
-                        <i class="fa-solid fa-user-check text-brand-sage"></i>
-                        <span id="header-spots-count">5</span>/5 Q4 Spots Open
-                    </span>
-                    <a href="#contact" onclick="selectPackage('General Consultation')" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-brand-primary hover:bg-slate-800 shadow-sm transition-all duration-200 transform hover:-translate-y-0.5">
-                        Inquire Now <i class="fa-solid fa-paper-plane ml-2 text-xs text-brand-accent"></i>
-                    </a>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-stone-700 hover:text-brand-primary hover:bg-stone-100 focus:outline-none" aria-label="Toggle Navigation">
-                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-b border-stone-200 bg-brand-bg px-4 pt-2 pb-6 space-y-3">
-            <div class="py-1">
-                <span class="text-xs font-bold text-stone-800 bg-brand-sageLight border border-brand-sage/30 px-3 py-1 rounded-full inline-flex items-center gap-1.5">
-                    <i class="fa-solid fa-user-check text-brand-sage"></i>
-                    <span id="mobile-spots-count">5</span> of 5 Q4 Retainer Spots Open
-                </span>
-            </div>
-            <a href="#services" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-100">Services</a>
-            <a href="#packages" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-100">Retainer Packages</a>
-            <a href="#boundaries" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-100">Working Boundaries</a>
-            <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-100">About Joscelyn</a>
-            <a href="#hosting-guide" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-100">Free Hosting Guide</a>
-            <div class="pt-2">
-                <a href="#contact" onclick="selectPackage('General Consultation')" class="mobile-link w-full flex items-center justify-center px-4 py-3 rounded-full text-base font-semibold text-white bg-brand-primary">
-                    Inquire Now
-                </a>
-            </div>
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                JF <span class="logo-badge">VA</span> <span>Virtual Assistant</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#boundaries">Boundaries</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <a href="#inquire" class="btn-orange">Inquire Now</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Hero Left Content -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    
-                    <!-- Status Badge -->
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-accentLight border border-brand-accent/30 text-stone-900 font-bold text-xs uppercase tracking-wider shadow-sm">
-                        <i class="fa-solid fa-bullseye text-brand-accent"></i> 
-                        Part-Time Retainers • Deliverable Guaranteed
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="container hero">
+            <div>
+                <span class="hero-tag">🐆 Marketing & Systems Strategist</span>
+                <h1 class="hero-title">High-Impact Operations & <span>Creative Growth</span> for Business Owners</h1>
+                <p class="hero-subtitle">
+                    Streamline your back-office, CRM, and marketing execution with an outcome-driven Virtual Assistant. Bold storytelling and seamless organization delivered asynchronously.
+                </p>
+                <div class="badge-grid">
+                    <span class="pill-badge">B.S. Marketing</span>
+                    <span class="pill-badge orange-pill">UGC & Social Creator</span>
+                    <span class="pill-badge">Google Certified</span>
+                    <span class="pill-badge orange-pill">Salesforce & CRM Proficient</span>
+                    <span class="pill-badge">Bilingual (EN/ES)</span>
+                </div>
+            </div>
+
+            <div class="cheetah-frame">
+                <div class="counter-card">
+                    <div class="counter-header">
+                        <span>Q4 CLIENT CAPACITY</span>
+                        <span style="color: var(--teal-bright);">● 5 SPOTS OPEN</span>
                     </div>
-
-                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-primary leading-[1.15]">
-                        High-Impact Marketing & Back-Office Systems, Executed Asynchronously.
-                    </h1>
-
-                    <p class="text-base sm:text-lg text-brand-muted leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                        Stop trading full-time management overhead for daily micro-tasks. I provide predictable, deliverables-driven marketing execution, CRM maintenance, and executive admin support on a streamlined part-time retainer model.
+                    <div class="counter-number" id="spotCounterDisplay">5 / 5</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="spotProgressFill"></div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">
+                        All 5 client retainer spots are currently available for this quarter.
                     </p>
-
-                    <!-- CTAs -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="#packages" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-full text-base font-semibold text-white bg-brand-primary hover:bg-slate-800 shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5">
-                            View Retainer Packages <i class="fa-solid fa-arrow-down ml-2.5 text-xs"></i>
-                        </a>
-                        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-full text-base font-semibold text-stone-800 bg-white border border-stone-300 hover:bg-stone-50 shadow-sm hover:shadow-md transition-all duration-200">
-                            Submit Inquiry <i class="fa-solid fa-paper-plane ml-2 text-brand-sage text-xs"></i>
-                        </a>
-                    </div>
-
-                    <!-- Credential Badges -->
-                    <div class="pt-6 border-t border-stone-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs sm:text-sm font-semibold text-brand-primary">
-                        <div class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 shadow-sm">
-                            <i class="fa-solid fa-graduation-cap text-brand-accent"></i> B.S. Marketing
-                        </div>
-                        <div class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 shadow-sm">
-                            <i class="fa-brands fa-google text-brand-sage"></i> Google Certified
-                        </div>
-                        <div class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 shadow-sm">
-                            <i class="fa-solid fa-database text-indigo-600"></i> Salesforce & CRM Experienced
-                        </div>
-                    </div>
                 </div>
-
-                <!-- Hero Right Card -->
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative w-full max-w-md">
-                        <!-- Decorative background glow -->
-                        <div class="absolute -top-6 -left-6 w-72 h-72 bg-brand-sageLight rounded-full blur-3xl opacity-60"></div>
-                        <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-brand-accentLight rounded-full blur-3xl opacity-60"></div>
-
-                        <!-- Card Container -->
-                        <div class="relative bg-white border border-stone-200 rounded-3xl p-6 sm:p-8 card-shadow space-y-6">
-                            
-                            <!-- Profile Mini Banner -->
-                            <div class="flex items-center gap-4 border-b border-stone-100 pb-5">
-                                <div class="w-16 h-16 rounded-2xl bg-brand-primary text-white flex items-center justify-center font-serif text-2xl font-bold shadow-md shrink-0">
-                                    JF
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-lg text-brand-primary">Joscelyn Flores</h3>
-                                    <p class="text-xs font-semibold text-brand-sage">Marketing & Operations Specialist</p>
-                                    <span class="inline-block mt-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
-                                        <i class="fa-solid fa-circle text-amber-500 text-[8px] mr-1"></i> Strictly Capped at 5 Clients Max
-                                    </span>
-                                </div>
-                            </div>
-
-                            <!-- Highlights -->
-                            <div class="space-y-3.5 text-sm">
-                                <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-bg border border-stone-100">
-                                    <i class="fa-solid fa-list-check text-brand-accent mt-0.5 text-base"></i>
-                                    <div>
-                                        <span class="font-semibold text-brand-primary">Outcome-Based Retainers</span>
-                                        <p class="text-xs text-brand-muted">Clear weekly outputs rather than micromanaged hourly clocks.</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-bg border border-stone-100">
-                                    <i class="fa-solid fa-envelope-open-text text-brand-sage mt-0.5 text-base"></i>
-                                    <div>
-                                        <span class="font-semibold text-brand-primary">Friday Status Digest</span>
-                                        <p class="text-xs text-brand-muted">Weekly written & video updates keeping you informed with zero meeting clutter.</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-bg border border-stone-100">
-                                    <i class="fa-solid fa-language text-indigo-600 mt-0.5 text-base"></i>
-                                    <div>
-                                        <span class="font-semibold text-brand-primary">Bilingual Capabilities</span>
-                                        <p class="text-xs text-brand-muted">English & conversational Spanish correspondence support.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Trust Pill -->
-                            <div class="pt-2 text-center text-xs text-stone-500 font-medium border-t border-stone-100">
-                                <i class="fa-solid fa-shield-halved text-brand-sage mr-1"></i> Confidential • Professional • Systemized
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Overview Section -->
-    <section id="services" class="py-24 bg-brand-surface/60 border-y border-stone-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-brand-sage bg-brand-sageLight px-3.5 py-1 rounded-full border border-brand-sage/20">Core Specializations</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-primary">Services Designed for Retainer Growth</h2>
-                <p class="text-brand-muted text-base">Leveraging administrative precision and visual marketing strategy across 5 core high-demand areas.</p>
+        <!-- Services Section -->
+        <section id="services" class="container">
+            <div class="section-header">
+                <h2>Specialized Core Services</h2>
+                <p>Merging administrative precision, CRM proficiency, and vibrant visual content creation.</p>
+                <div class="cheetah-divider"></div>
             </div>
 
-            <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Service 1 -->
-                <div class="bg-white rounded-2xl p-7 border border-stone-200 card-shadow hover:card-shadow-lg transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-brand-accentLight text-brand-accent flex items-center justify-center text-xl font-bold mb-5">
-                            <i class="fa-solid fa-photo-film"></i>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold text-brand-primary mb-3">Social Media & UGC Content Creation</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-5">
-                            End-to-end social media management. Monthly strategy calendars, custom Canva graphic assets, and short-form video creation (Reels & TikToks) batched seamlessly.
-                        </p>
-                    </div>
-                    <ul class="text-xs space-y-2 text-stone-500 border-t border-stone-100 pt-4 font-medium">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Monthly Content Calendars</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Short-Form UGC Video Asset Editing</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Canva Graphic Design & Scheduling</li>
-                    </ul>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>📱 Social Media & UGC Content</h3>
+                    <p>Monthly content calendar strategy, custom Canva graphic design, and engaging short-form UGC video creation (Reels/TikToks) aligned with your brand voice.</p>
                 </div>
-
-                <!-- Service 2 -->
-                <div class="bg-white rounded-2xl p-7 border border-stone-200 card-shadow hover:card-shadow-lg transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-brand-sageLight text-brand-sage flex items-center justify-center text-xl font-bold mb-5">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold text-brand-primary mb-3">CRM & Database Management</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-5">
-                            Hands-on experience with Salesforce, Epic, PowerSchool, and custom CRMs. Managing record hygiene, lead list segmentation, and automated workflow tagging.
-                        </p>
-                    </div>
-                    <ul class="text-xs space-y-2 text-stone-500 border-t border-stone-100 pt-4 font-medium">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Salesforce & CRM Data Entry & Audits</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Lead Segmentation & Contact Tagging</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Interaction Documentation</li>
-                    </ul>
+                <div class="service-card">
+                    <h3>📊 CRM & Database Hygiene</h3>
+                    <p>Contact list segmentation, lead workflow tagging, data audits, and record hygiene in Salesforce, HubSpot, or custom CRM systems.</p>
                 </div>
-
-                <!-- Service 3 -->
-                <div class="bg-white rounded-2xl p-7 border border-stone-200 card-shadow hover:card-shadow-lg transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center text-xl font-bold mb-5">
-                            <i class="fa-solid fa-calendar-check"></i>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold text-brand-primary mb-3">Executive Admin & Calendar Triage</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-5">
-                            Asynchronous inbox management and high-volume calendar triage. Screening incoming inquiries, scheduling appointments, and preparing professional correspondence.
-                        </p>
-                    </div>
-                    <ul class="text-xs space-y-2 text-stone-500 border-t border-stone-100 pt-4 font-medium">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> High-Volume Calendar Coordination</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Email Inbox Zero & Inquiry Drafting</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Standard Operating Procedure Docs</li>
-                    </ul>
+                <div class="service-card">
+                    <h3>✉️ Executive Inbox & Calendar</h3>
+                    <p>High-volume email triage, appointment scheduling, meeting coordination, and professional client correspondence.</p>
                 </div>
-
-                <!-- Service 4 -->
-                <div class="bg-white rounded-2xl p-7 border border-stone-200 card-shadow hover:card-shadow-lg transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-xl font-bold mb-5">
-                            <i class="fa-solid fa-bullhorn"></i>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold text-brand-primary mb-3">Event & Campaign Coordination</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-5">
-                            Logistics coordination for digital launches, community outreach programs, and webinars. Managing vendor correspondence and promotional toolkit distribution.
-                        </p>
-                    </div>
-                    <ul class="text-xs space-y-2 text-stone-500 border-t border-stone-100 pt-4 font-medium">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Vendor & Partner Communications</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Launch & Event Timeline Tracking</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Promotional Material Distribution</li>
-                    </ul>
+                <div class="service-card">
+                    <h3>🎯 Project & Event Logistics</h3>
+                    <p>Cross-functional coordination, marketing outreach support, partner communications, and event execution logistics.</p>
                 </div>
-
-                <!-- Service 5 -->
-                <div class="bg-white rounded-2xl p-7 border border-stone-200 card-shadow hover:card-shadow-lg transition-all duration-300 flex flex-col justify-between lg:col-span-2">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl font-bold mb-5">
-                            <i class="fa-solid fa-heart-circle-check"></i>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold text-brand-primary mb-3">Customer Experience & Client Onboarding</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-5">
-                            Executing smooth client onboarding, managing customer care inboxes, collecting feedback surveys, and maintaining warm client communication across English and Spanish accounts.
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-stone-500 border-t border-stone-100 pt-4 font-medium">
-                        <div class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Client Onboarding Checklist Execution</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Customer Desk Support & Messaging</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Feedback Surveys & Client Care</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-brand-sage mr-2"></i> Bilingual English & Spanish Support</div>
-                    </div>
+                <div class="service-card">
+                    <h3>🤝 Customer Relationship Care</h3>
+                    <p>Onboarding workflows, client follow-up protocols, feedback collection, and multi-channel customer relationship management.</p>
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Deliverables-Based Retainer Packages Section -->
-    <section id="packages" class="py-24 bg-brand-bg relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 font-bold text-xs uppercase tracking-wider">
-                    <i class="fa-solid fa-clock mr-1 text-amber-700"></i>
-                    Q4 Retainer Availability: <span id="packages-spots-count">2</span> of 5 Spots Left
-                </div>
-
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-primary">Part-Time Retainer Packages</h2>
-                <p class="text-brand-muted text-base">Outcome-based monthly plans designed for consistent execution without micromanagement.</p>
+        <!-- Packages Section -->
+        <section id="packages" class="container">
+            <div class="section-header">
+                <h2>Monthly Retainer Packages</h2>
+                <p>Flat-rate monthly subscriptions focused on deliverables and outcomes—no hourly tracking required.</p>
+                <div class="cheetah-divider"></div>
             </div>
 
-            <!-- Pricing Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-                
+            <div class="pricing-grid">
                 <!-- Tier 1 -->
-                <div class="bg-white rounded-3xl p-8 border border-stone-200 card-shadow flex flex-col justify-between relative hover:border-stone-300 transition-all">
+                <div class="pricing-card">
                     <div>
-                        <div class="mb-6">
-                            <span class="text-xs font-bold text-stone-500 uppercase tracking-wider">Tier 1</span>
-                            <h3 class="font-serif text-2xl font-bold text-brand-primary mt-1">Operations & Admin Foundations</h3>
-                            <p class="text-xs text-stone-500 mt-2">Essential back-office admin, calendar triage, and CRM record maintenance.</p>
-                        </div>
-
-                        <div class="mb-6 pb-6 border-b border-stone-100">
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-4xl font-extrabold text-brand-primary">$850</span>
-                                <span class="text-stone-500 text-sm font-medium">/ month</span>
-                            </div>
-                            <span class="inline-block mt-2 text-xs font-semibold text-brand-sage bg-brand-sageLight px-3 py-1 rounded-md">
-                                <i class="fa-solid fa-cube mr-1"></i> Deliverable-Driven Retainer
-                            </span>
-                        </div>
-
-                        <!-- Deliverables -->
-                        <ul class="space-y-3.5 text-sm text-stone-600 mb-8">
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>Async Inbox & Calendar Triage</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>CRM Contact Updates & List Hygiene</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>Daily Back-Office Records Maintenance</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>Inquiry Draft Correspondence</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>Friday Weekly Status Update Digest</span>
-                            </li>
+                        <h3>Operations Foundations</h3>
+                        <div class="price">$850 <span>/ month</span></div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Essential back-office & admin hygiene</p>
+                        <ul class="feature-list">
+                            <li>Inbox & Calendar Triage</li>
+                            <li>CRM Entry & Record Audit</li>
+                            <li>Standard SOP Documentation</li>
+                            <li>Weekly Friday Progress Digest</li>
                         </ul>
                     </div>
-
-                    <button onclick="selectPackage('Tier 1: Operations Foundations ($850/mo)')" class="w-full py-3.5 px-6 rounded-full border border-brand-primary text-brand-primary font-semibold text-sm hover:bg-brand-primary hover:text-white transition-all duration-200">
-                        Inquire for Tier 1
-                    </button>
+                    <button class="btn-teal" onclick="selectPackage('Tier 1 - Operations Foundations ($850/mo)')">Select Tier 1</button>
                 </div>
 
-                <!-- Tier 2 (Highlighted) -->
-                <div class="bg-white rounded-3xl p-8 border-2 border-brand-sage card-shadow-lg flex flex-col justify-between relative transform lg:-translate-y-2">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-sage text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
-                        <i class="fa-solid fa-fire mr-1"></i> Most Popular Retainer
-                    </div>
-
+                <!-- Tier 2 (Featured) -->
+                <div class="pricing-card featured">
+                    <span class="featured-badge">Most Popular</span>
                     <div>
-                        <div class="mb-6 pt-2">
-                            <span class="text-xs font-bold text-brand-sage uppercase tracking-wider">Tier 2</span>
-                            <h3 class="font-serif text-2xl font-bold text-brand-primary mt-1">Growth & Social Media</h3>
-                            <p class="text-xs text-stone-500 mt-2">Combined back-office support with active short-form UGC and social strategy.</p>
-                        </div>
-
-                        <div class="mb-6 pb-6 border-b border-stone-100">
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-4xl font-extrabold text-brand-primary">$2,000</span>
-                                <span class="text-stone-500 text-sm font-medium">/ month</span>
-                            </div>
-                            <span class="inline-block mt-2 text-xs font-semibold text-brand-sage bg-brand-sageLight px-3 py-1 rounded-md">
-                                <i class="fa-solid fa-cube mr-1"></i> Deliverable-Driven Retainer
-                            </span>
-                        </div>
-
-                        <!-- Deliverables -->
-                        <ul class="space-y-3.5 text-sm text-stone-600 mb-8">
-                            <li class="flex items-start font-semibold text-brand-primary">
-                                <i class="fa-solid fa-star text-brand-accent mt-1 mr-3 text-sm"></i>
-                                <span>Includes Everything in Tier 1</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>3–4 Weekly Scheduled Social Posts</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>4 Short-Form UGC Videos / Reels per month</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>Canva Graphic Asset Design</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>Monthly Performance Analytics Report</span>
-                            </li>
+                        <h3>Growth & Marketing</h3>
+                        <div class="price">$2,000 <span>/ month</span></div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Full content execution & admin support</p>
+                        <ul class="feature-list">
+                            <li>All Tier 1 Foundations Included</li>
+                            <li>3–4 Social Posts/Week (2 Platforms)</li>
+                            <li>4 Custom UGC Short-Form Videos</li>
+                            <li>Monthly Analytics & Engagement Report</li>
                         </ul>
                     </div>
-
-                    <button onclick="selectPackage('Tier 2: Growth & Social Media ($2,000/mo)')" class="w-full py-3.5 px-6 rounded-full bg-brand-sage text-white font-semibold text-sm hover:bg-brand-sageDark shadow-md hover:shadow-lg transition-all duration-200">
-                        Inquire for Tier 2
-                    </button>
+                    <button class="btn-orange" onclick="selectPackage('Tier 2 - Growth & Marketing ($2,000/mo)')">Select Tier 2</button>
                 </div>
 
                 <!-- Tier 3 -->
-                <div class="bg-white rounded-3xl p-8 border border-stone-200 card-shadow flex flex-col justify-between relative hover:border-stone-300 transition-all">
+                <div class="pricing-card">
                     <div>
-                        <div class="mb-6">
-                            <span class="text-xs font-bold text-stone-500 uppercase tracking-wider">Tier 3</span>
-                            <h3 class="font-serif text-2xl font-bold text-brand-primary mt-1">VIP Marketing & Operations</h3>
-                            <p class="text-xs text-stone-500 mt-2">Strategic hybrid operations manager & campaign coordinator support.</p>
-                        </div>
-
-                        <div class="mb-6 pb-6 border-b border-stone-100">
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-4xl font-extrabold text-brand-primary">$3,500</span>
-                                <span class="text-stone-500 text-sm font-medium">/ month</span>
-                            </div>
-                            <span class="inline-block mt-2 text-xs font-semibold text-brand-sage bg-brand-sageLight px-3 py-1 rounded-md">
-                                <i class="fa-solid fa-cube mr-1"></i> Deliverable-Driven Retainer
-                            </span>
-                        </div>
-
-                        <!-- Deliverables -->
-                        <ul class="space-y-3.5 text-sm text-stone-600 mb-8">
-                            <li class="flex items-start font-semibold text-brand-primary">
-                                <i class="fa-solid fa-star text-brand-accent mt-1 mr-3 text-sm"></i>
-                                <span>Includes Everything in Tier 1 & Tier 2</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>Advanced CRM Workflows & Segmentation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>8 Short-Form UGC Video Assets monthly</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>Event & Campaign Launch Coordination</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-sage mt-1 mr-3 text-sm"></i>
-                                <span>Async Monthly Strategy & Ops Review</span>
-                            </li>
+                        <h3>VIP Marketing & Ops</h3>
+                        <div class="price">$3,500 <span>/ month</span></div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Turnkey strategy & operations management</p>
+                        <ul class="feature-list">
+                            <li>All Tier 1 & Tier 2 Deliverables</li>
+                            <li>Advanced CRM Workflows & Tagging</li>
+                            <li>8 Custom UGC Video Assets/Month</li>
+                            <li>Dedicated 60-Min Monthly Strategy Call</li>
                         </ul>
                     </div>
-
-                    <button onclick="selectPackage('Tier 3: VIP Marketing & Operations ($3,500/mo)')" class="w-full py-3.5 px-6 rounded-full border border-brand-primary text-brand-primary font-semibold text-sm hover:bg-brand-primary hover:text-white transition-all duration-200">
-                        Inquire for Tier 3
-                    </button>
+                    <button class="btn-teal" onclick="selectPackage('Tier 3 - VIP Marketing & Ops ($3,500/mo)')">Select Tier 3</button>
                 </div>
-
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <!-- Part-Time & Asynchronous Working Boundaries Section -->
-    <section id="boundaries" class="py-24 bg-brand-primary text-white border-y border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-brand-accent bg-amber-950/80 px-3.5 py-1 rounded-full border border-amber-800/60">How We Work Together</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Part-Time & Asynchronous Boundaries</h2>
-                <p class="text-stone-300 text-base">How structured asynchronous workflows preserve high productivity, eliminate meeting clutter, and protect campaign quality.</p>
+        <!-- Asynchronous Boundaries Box -->
+        <section id="boundaries" class="container">
+            <div class="boundaries-box">
+                <h3>Working Boundaries & Delivery Model</h3>
+                <div class="boundaries-grid">
+                    <div class="boundary-item">
+                        <h4>Asynchronous First</h4>
+                        <p>Primary communication takes place via email and shared project portals (Notion/Asana) to maximize focused execution.</p>
+                    </div>
+                    <div class="boundary-item">
+                        <h4>24-Hour Response SLA</h4>
+                        <p>Non-urgent communications received during standard business hours (Mon–Fri, 9–5 EST) receive a reply within 24 business hours.</p>
+                    </div>
+                    <div class="boundary-item">
+                        <h4>Friday Updates</h4>
+                        <p>Receive a weekly status report every Friday detailing completed tasks, open items, and upcoming priorities.</p>
+                    </div>
+                    <div class="boundary-item">
+                        <h4>Outcome-Driven</h4>
+                        <p>Work is measured by completed deliverables and agreed quality metrics rather than arbitrary logged hours.</p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Boundary 1 -->
-                <div class="p-6 rounded-2xl bg-stone-800/90 border border-stone-700 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg font-bold">
-                        <i class="fa-solid fa-comments-slash"></i>
-                    </div>
-                    <h3 class="font-serif text-lg font-bold text-white">Async First Communication</h3>
-                    <p class="text-stone-300 text-xs leading-relaxed">
-                        All project inquiries and asset requests are logged via email or your dedicated Asana/Trello board—eliminating constant call interruptions.
-                    </p>
+        <!-- Inquiry Form -->
+        <section id="inquire" class="container">
+            <div class="form-section">
+                <div class="section-header" style="margin-bottom: 32px;">
+                    <h2>Client Inquiry Form</h2>
+                    <p>Submit your project details below to reserve one of the 5 Q4 retainer spots. Submissions route directly to <strong>contact.jfva@gmail.com</strong>.</p>
                 </div>
 
-                <!-- Boundary 2 -->
-                <div class="p-6 rounded-2xl bg-stone-800/90 border border-stone-700 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-lg font-bold">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
-                    </div>
-                    <h3 class="font-serif text-lg font-bold text-white">24-Business Hour SLA</h3>
-                    <p class="text-stone-300 text-xs leading-relaxed">
-                        Standard response turnaround time for emails and portal comments is within 24 business hours during standard operational windows.
-                    </p>
-                </div>
-
-                <!-- Boundary 3 -->
-                <div class="p-6 rounded-2xl bg-stone-800/90 border border-stone-700 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-lg font-bold">
-                        <i class="fa-solid fa-calendar-check"></i>
-                    </div>
-                    <h3 class="font-serif text-lg font-bold text-white">Friday Weekly Digest</h3>
-                    <p class="text-stone-300 text-xs leading-relaxed">
-                        Every Friday, you receive a comprehensive written summary detailing completed deliverables, upcoming schedules, and required approvals.
-                    </p>
-                </div>
-
-                <!-- Boundary 4 -->
-                <div class="p-6 rounded-2xl bg-stone-800/90 border border-stone-700 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg font-bold">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-                    <h3 class="font-serif text-lg font-bold text-white">Outcomes Over Hours</h3>
-                    <p class="text-stone-300 text-xs leading-relaxed">
-                        You pay for finished, high-quality deliverables (e.g. videos, updated CRM records, scheduled posts), not micromanaged hourly clock-ins.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Working Policy Callout -->
-            <div class="mt-10 p-6 rounded-2xl bg-stone-800 border border-stone-700 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs text-stone-300">
-                <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-circle-info text-brand-accent text-lg"></i>
-                    <span><strong>Standard Working Hours:</strong> Monday through Thursday focus blocks. Emergency protocols defined during onboarding.</span>
-                </div>
-                <a href="#contact" class="px-4 py-2 rounded-full bg-brand-sage text-white font-bold hover:bg-brand-sageDark transition-colors shrink-0">
-                    Questions on Async Model?
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- About Joscelyn Section -->
-    <section id="about" class="py-24 bg-white border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Left Bio Text -->
-                <div class="lg:col-span-7 space-y-6">
-                    <span class="text-xs font-bold uppercase tracking-widest text-brand-sage bg-brand-sageLight px-3 py-1 rounded-full border border-brand-sage/20">Background & Track Record</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-primary leading-tight">
-                        Strategic Marketing Mindset Meets Back-Office Execution.
-                    </h2>
-
-                    <p class="text-stone-600 text-base leading-relaxed">
-                        Holding a Bachelor of Science in Marketing and an Associate of Applied Science in Visual Communication, I bridge the gap between creative visual campaigns and structured back-office systems.
-                    </p>
-
-                    <p class="text-stone-600 text-base leading-relaxed">
-                        Having managed high-volume record operations across Salesforce, Epic, and PowerSchool while maintaining a 90%+ quality accuracy rate, I bring rigorous data hygiene and dependable execution to every client account. My bilingual skills (English & conversational Spanish) further allow me to communicate seamlessly with diverse audiences.
-                    </p>
-
-                    <!-- Key Attributes Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <div class="p-4 rounded-xl bg-brand-bg border border-stone-200">
-                            <div class="flex items-center gap-3 font-bold text-brand-primary text-sm mb-1">
-                                <i class="fa-solid fa-graduation-cap text-brand-sage"></i> B.S. Marketing & Visual Arts
-                            </div>
-                            <p class="text-xs text-stone-500">Formal education in digital audience strategy, visual layout, and graphic composition.</p>
+                <form id="clientInquiryForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" required placeholder="Jane Doe">
                         </div>
-
-                        <div class="p-4 rounded-xl bg-brand-bg border border-stone-200">
-                            <div class="flex items-center gap-3 font-bold text-brand-primary text-sm mb-1">
-                                <i class="fa-solid fa-language text-brand-accent"></i> Bilingual Execution
-                            </div>
-                            <p class="text-xs text-stone-500">Fluent English and conversational Spanish client correspondence support.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Card -->
-                <div class="lg:col-span-5">
-                    <div class="bg-brand-surface rounded-3xl p-8 border border-stone-200 card-shadow space-y-6">
-                        <h3 class="font-serif text-xl font-bold text-brand-primary border-b border-stone-200 pb-4">
-                            Systems & Tech Proficiency
-                        </h3>
-
-                        <!-- Stack Pills -->
-                        <div class="space-y-4">
-                            <div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-stone-500 block mb-2">CRM & Database Software</span>
-                                <div class="flex flex-wrap gap-2 text-xs font-semibold text-stone-700">
-                                    <span class="px-3 py-1 bg-white border border-stone-200 rounded-lg">Salesforce</span>
-                                    <span class="px-3 py-1 bg-white border border-stone-200 rounded-lg">Epic System</span>
-                                    <span class="px-3 py-1 bg-white border border-stone-200 rounded-lg">PowerSchool</span>
-                                    <span class="px-3 py-1 bg-white border border-stone-200 rounded-lg">Google Workspace</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-stone-500 block mb-2">Creative & Social Tools</span>
-                                <div class="flex flex-wrap gap-2 text-xs font-semibold text-stone-700">
-                                    <span class="px-3 py-1 bg-white border border-stone-200 rounded-lg">Canva Pro</span>
-                                    <span class="px-3 py-1 bg-white border border-stone-200 rounded-lg">CapCut Video</span>
-                                    <span class="px-3 py-1 bg-white border border-stone-200 rounded-lg">Meta Suite</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-stone-500 block mb-2">Async Workspace Tools</span>
-                                <div class="flex flex-wrap gap-2 text-xs font-semibold text-stone-700">
-                                    <span class="px-3 py-1 bg-white border border-stone-200 rounded-lg">Asana</span>
-                                    <span class="px-3 py-1 bg-white border border-stone-200 rounded-lg">Trello</span>
-                                    <span class="px-3 py-1 bg-white border border-stone-200 rounded-lg">Loom</span>
-                                    <span class="px-3 py-1 bg-white border border-stone-200 rounded-lg">Notion</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Credentials Bar -->
-                        <div class="pt-4 border-t border-stone-200 flex items-center gap-3">
-                            <i class="fa-solid fa-certificate text-2xl text-brand-accent"></i>
-                            <div>
-                                <p class="text-xs font-bold text-brand-primary">Google Digital Marketing Certified</p>
-                                <p class="text-[11px] text-stone-500">Verified digital campaign strategy & audience management</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Lead Inquiry Form -->
-    <section id="contact" class="py-24 bg-stone-900 text-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                
-                <!-- Left Column -->
-                <div class="lg:col-span-5 space-y-8">
-                    <div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-brand-accent bg-amber-950/80 px-3 py-1 rounded-full border border-amber-800/50">Q4 Client Application</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-4 leading-tight">Inquire for Retainer Openings</h2>
-                        <p class="text-stone-400 text-sm mt-3 leading-relaxed">
-                            To ensure focused execution, client onboarding is strictly limited to 5 clients total per quarter. Submit your details below to reserve an opening.
-                        </p>
-                    </div>
-
-                    <!-- Direct Contact Cards -->
-                    <div class="space-y-4 text-sm font-medium">
-                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-stone-800/80 border border-stone-700">
-                            <div class="w-10 h-10 rounded-xl bg-stone-700 flex items-center justify-center text-brand-accent">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-stone-400">Direct Email</p>
-                                <a href="mailto:joscelynq@gmail.com" class="text-white hover:text-brand-accent font-semibold transition-colors">joscelynq@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-stone-800/80 border border-stone-700">
-                            <div class="w-10 h-10 rounded-xl bg-stone-700 flex items-center justify-center text-brand-sage">
-                                <i class="fa-solid fa-chart-line"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-stone-400">Q4 Retainer Availability</p>
-                                <p class="text-amber-400 font-bold"><span class="form-spots-count">2</span> Spots Remaining</p>
-                            </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" required placeholder="jane@company.com">
                         </div>
                     </div>
 
-                    <!-- Policy Guarantee -->
-                    <div class="p-5 rounded-2xl bg-stone-800/40 border border-stone-800 text-xs text-stone-400 space-y-2">
-                        <div class="font-semibold text-stone-300 flex items-center gap-2">
-                            <i class="fa-solid fa-circle-check text-brand-sage"></i> Next Steps After Submission
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="businessName">Business Name / Website</label>
+                            <input type="text" id="businessName" placeholder="Acme Consulting">
                         </div>
-                        <p>You will receive a tailored proposal and agreement link within 24 business hours outlining your requested deliverables scope.</p>
-                    </div>
-                </div>
-
-                <!-- Right Form Column -->
-                <div class="lg:col-span-7 bg-stone-800/90 border border-stone-700 p-8 sm:p-10 rounded-3xl card-shadow">
-                    
-                    <!-- Form Header -->
-                    <div class="mb-6">
-                        <h3 class="font-serif text-2xl font-bold text-white">Retainer Inquiry Form</h3>
-                        <p class="text-xs text-stone-400 mt-1">Fill out your goals and preferred communication channel.</p>
-                    </div>
-
-                    <!-- Interactive Form -->
-                    <form id="inquiry-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div>
-                                <label for="name" class="block text-xs font-semibold text-stone-300 mb-2">Your Full Name *</label>
-                                <input type="text" id="name" required placeholder="e.g. Sarah Jenkins" class="w-full px-4 py-3 rounded-xl bg-stone-900 border border-stone-700 text-white placeholder-stone-500 focus:outline-none focus:border-brand-sage focus:ring-1 focus:ring-brand-sage text-sm">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-xs font-semibold text-stone-300 mb-2">Email Address *</label>
-                                <input type="email" id="email" required placeholder="sarah@company.com" class="w-full px-4 py-3 rounded-xl bg-stone-900 border border-stone-700 text-white placeholder-stone-500 focus:outline-none focus:border-brand-sage focus:ring-1 focus:ring-brand-sage text-sm">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div>
-                                <label for="business-name" class="block text-xs font-semibold text-stone-300 mb-2">Business / Brand Name *</label>
-                                <input type="text" id="business-name" required placeholder="e.g. Jenkins Digital LLC" class="w-full px-4 py-3 rounded-xl bg-stone-900 border border-stone-700 text-white placeholder-stone-500 focus:outline-none focus:border-brand-sage focus:ring-1 focus:ring-brand-sage text-sm">
-                            </div>
-                            <div>
-                                <label for="package-select" class="block text-xs font-semibold text-stone-300 mb-2">Preferred Retainer Package *</label>
-                                <select id="package-select" required class="w-full px-4 py-3 rounded-xl bg-stone-900 border border-stone-700 text-white focus:outline-none focus:border-brand-sage focus:ring-1 focus:ring-brand-sage text-sm">
-                                    <option value="" disabled selected>Select Package Tier...</option>
-                                    <option value="Tier 1: Operations Foundations ($850/mo)">Tier 1: Operations Foundations ($850/mo)</option>
-                                    <option value="Tier 2: Growth & Social Media ($2,000/mo)">Tier 2: Growth & Social Media ($2,000/mo)</option>
-                                    <option value="Tier 3: VIP Marketing & Operations ($3,500/mo)">Tier 3: VIP Marketing & Operations ($3,500/mo)</option>
-                                    <option value="Custom Deliverable Scope">Custom Deliverable Scope</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="comm-preference" class="block text-xs font-semibold text-stone-300 mb-2">Preferred Asynchronous Channel *</label>
-                            <select id="comm-preference" required class="w-full px-4 py-3 rounded-xl bg-stone-900 border border-stone-700 text-white focus:outline-none focus:border-brand-sage focus:ring-1 focus:ring-brand-sage text-sm">
-                                <option value="" disabled selected>Select primary workspace tool...</option>
-                                <option value="Email & Friday Loom Updates">Email & Friday Loom Updates</option>
-                                <option value="Asana Project Board">Asana Project Board</option>
-                                <option value="Trello Project Board">Trello Project Board</option>
-                                <option value="Notion Client Portal">Notion Client Portal</option>
+                        <div class="form-group">
+                            <label for="packageSelect">Preferred Service Tier *</label>
+                            <select id="packageSelect" required>
+                                <option value="">Select a package tier...</option>
+                                <option value="Tier 1 - Operations Foundations ($850/mo)">Tier 1 - Operations Foundations ($850/mo)</option>
+                                <option value="Tier 2 - Growth & Marketing ($2,000/mo)">Tier 2 - Growth & Marketing ($2,000/mo)</option>
+                                <option value="Tier 3 - VIP Marketing & Ops ($3,500/mo)">Tier 3 - VIP Marketing & Ops ($3,500/mo)</option>
                             </select>
                         </div>
-
-                        <div>
-                            <label for="message" class="block text-xs font-semibold text-stone-300 mb-2">Primary Goal & Project Details *</label>
-                            <textarea id="message" rows="3" required placeholder="Describe your main administrative or marketing bottlenecks (e.g., CRM list cleanup, weekly short-form UGC, inbox triage)..." class="w-full px-4 py-3 rounded-xl bg-stone-900 border border-stone-700 text-white placeholder-stone-500 focus:outline-none focus:border-brand-sage focus:ring-1 focus:ring-brand-sage text-sm"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full py-4 rounded-xl bg-brand-sage text-white font-bold text-sm hover:bg-brand-sageDark shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i> Submit Inquiry & Hold Spot
-                        </button>
-                    </form>
-
-                    <!-- Success State -->
-                    <div id="form-success" class="hidden text-center py-10 space-y-4">
-                        <div class="w-16 h-16 rounded-full bg-emerald-900/60 text-emerald-400 border border-emerald-500 flex items-center justify-center text-2xl mx-auto animate-bounce">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <h4 class="font-serif text-2xl font-bold text-white">Inquiry Received!</h4>
-                        <p class="text-stone-300 text-sm max-w-md mx-auto">
-                            Thank you, <span id="client-name-span" class="font-semibold text-brand-sage"></span>! Your inquiry for <span id="selected-tier-span" class="font-semibold text-amber-400"></span> has been logged.
-                        </p>
-                        <div class="p-4 rounded-xl bg-amber-950/60 border border-amber-800/80 text-xs text-amber-200 max-w-sm mx-auto">
-                            <i class="fa-solid fa-lock mr-1 text-amber-400"></i> Spot Provisionally Held: Remaining Open Spots Updated to <span class="form-spots-count font-bold">1</span> of 5.
-                        </div>
-                        <button onclick="resetForm()" class="mt-4 px-6 py-2.5 rounded-full border border-stone-600 text-stone-300 hover:text-white text-xs font-semibold">
-                            Submit Another Request
-                        </button>
                     </div>
 
-                </div>
+                    <div class="form-group">
+                        <label for="asyncTool">Preferred Asynchronous Tool</label>
+                        <select id="asyncTool">
+                            <option value="Email & Google Drive">Email & Google Drive</option>
+                            <option value="Notion Dashboard">Notion Dashboard</option>
+                            <option value="Asana / Trello">Asana / Trello</option>
+                        </select>
+                    </div>
 
+                    <div class="form-group">
+                        <label for="goals">Primary Business Goals & Deliverable Needs *</label>
+                        <textarea id="goals" rows="4" required placeholder="Describe your top 2-3 immediate priorities or back-office bottlenecks..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-orange" style="width: 100%; padding: 16px; font-size: 1.05rem;">Submit Inquiry to contact.jfva@gmail.com</button>
+                </form>
+
+                <div id="formSuccessMessage" style="display: none; text-align: center; padding: 24px; background: #E0F2F1; border-radius: var(--radius-sm); color: #004D40; margin-top: 20px;">
+                    <h3>Inquiry Received!</h3>
+                    <p style="margin-top: 8px;">Thank you for your interest. A confirmation copy has been routed to <strong>contact.jfva@gmail.com</strong>. You will receive a response within 24 business hours.</p>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Free Website Hosting Guide Card -->
-    <section id="hosting-guide" class="py-20 bg-stone-200/50 border-t border-stone-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-8 sm:p-12 border border-stone-300 card-shadow">
-                
-                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 border-b border-stone-200 pb-8 mb-8">
-                    <div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">100% Free Hosting</span>
-                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-brand-primary mt-3">How to Host This Website for Free</h3>
-                        <p class="text-stone-600 text-sm mt-1">This single-file code can be published live in under 5 minutes with zero hosting costs.</p>
-                    </div>
-                    <button onclick="toggleHostingDetails()" id="hosting-toggle-btn" class="flex items-center gap-2 text-xs font-bold text-brand-primary bg-stone-100 hover:bg-stone-200 px-4 py-2.5 rounded-xl border border-stone-300 transition-colors">
-                        <span id="toggle-text">Show Hosting Instructions</span> <i class="fa-solid fa-chevron-down text-xs" id="toggle-icon"></i>
-                    </button>
-                </div>
-
-                <!-- Deployment Methods -->
-                <div id="hosting-content" class="hidden space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        
-                        <!-- Netlify -->
-                        <div class="p-6 rounded-2xl bg-brand-bg border border-stone-200 space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-sm text-brand-primary"><i class="fa-solid fa-globe text-emerald-600 mr-2"></i> Netlify (Easiest)</span>
-                                <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Drag & Drop</span>
-                            </div>
-                            <ol class="text-xs text-stone-600 leading-relaxed space-y-1.5 list-decimal pl-4">
-                                <li>Save this code as <code class="bg-stone-200 px-1 rounded">index.html</code> on your computer.</li>
-                                <li>Sign up for a free account at <strong>Netlify.com</strong>.</li>
-                                <li>Go to "Sites" and drag your file into the upload dropzone.</li>
-                                <li>Your website goes live immediately with SSL HTTPS!</li>
-                            </ol>
-                        </div>
-
-                        <!-- GitHub Pages -->
-                        <div class="p-6 rounded-2xl bg-brand-bg border border-stone-200 space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-sm text-brand-primary"><i class="fa-brands fa-github text-stone-900 mr-2"></i> GitHub Pages</span>
-                                <span class="text-[10px] font-bold bg-slate-200 text-slate-800 px-2 py-0.5 rounded">Custom Domain</span>
-                            </div>
-                            <ol class="text-xs text-stone-600 leading-relaxed space-y-1.5 list-decimal pl-4">
-                                <li>Create a free account at <strong>GitHub.com</strong>.</li>
-                                <li>Create a public repository named <code class="bg-stone-200 px-1 rounded">joscelyn-va</code>.</li>
-                                <li>Upload <code class="bg-stone-200 px-1 rounded">index.html</code> to the root folder.</li>
-                                <li>In Settings &rarr; Pages, select <code class="bg-stone-200 px-1 rounded">main</code> branch and click Save.</li>
-                            </ol>
-                        </div>
-
-                        <!-- Vercel -->
-                        <div class="p-6 rounded-2xl bg-brand-bg border border-stone-200 space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-sm text-brand-primary"><i class="fa-solid fa-play text-black mr-2"></i> Vercel</span>
-                                <span class="text-[10px] font-bold bg-purple-100 text-purple-800 px-2 py-0.5 rounded">Fast CDN</span>
-                            </div>
-                            <ol class="text-xs text-stone-600 leading-relaxed space-y-1.5 list-decimal pl-4">
-                                <li>Sign up at <strong>Vercel.com</strong>.</li>
-                                <li>Import your GitHub repository or use Vercel CLI.</li>
-                                <li>Click "Deploy" to publish your portfolio.</li>
-                                <li>Add your custom domain in settings for free.</li>
-                            </ol>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-primary text-stone-400 text-xs py-12 border-t border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div>
-                    <span class="font-serif text-lg font-bold text-white block">Joscelyn Flores</span>
-                    <span class="text-[11px] text-stone-400">Virtual Assistant & Marketing/Operations Specialist</span>
-                </div>
-
-                <div class="flex items-center gap-6 text-stone-300 font-medium">
-                    <a href="#services" class="hover:text-brand-sage transition-colors">Services</a>
-                    <a href="#packages" class="hover:text-brand-sage transition-colors">Packages</a>
-                    <a href="#boundaries" class="hover:text-brand-sage transition-colors">Boundaries</a>
-                    <a href="#about" class="hover:text-brand-sage transition-colors">About</a>
-                    <a href="#contact" class="hover:text-brand-sage transition-colors">Contact</a>
-                </div>
-
-                <div class="text-stone-500">
-                    &copy; <span id="year"></span> Joscelyn Flores. All Rights Reserved.
-                </div>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2026 Joscelyn Flores — JF Virtual Assistant. All rights reserved.</p>
+        <p style="margin-top: 8px;">Direct Contact: <a href="mailto:contact.jfva@gmail.com">contact.jfva@gmail.com</a></p>
     </footer>
 
-    <!-- Interactive JavaScript -->
+    <!-- Bottom Cheetah Bar -->
+    <div class="cheetah-bar"></div>
+
     <script>
-        // Open Spots Counter State
-        let openSpots = 5;
+        // Client Capacity Counter
+        let availableSpots = 5;
+        const totalSpots = 5;
 
-        function updateAllSpotCounters() {
-            const spotIds = ['header-spots-count', 'mobile-spots-count', 'packages-spots-count'];
-            spotIds.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.textContent = openSpots;
-            });
-            const formCounts = document.querySelectorAll('.form-spots-count');
-            formCounts.forEach(el => el.textContent = openSpots);
+        function updateCounterUI() {
+            const display = document.getElementById('spotCounterDisplay');
+            const fill = document.getElementById('spotProgressFill');
+            
+            display.innerText = `${availableSpots} / ${totalSpots}`;
+            const percentage = (availableSpots / totalSpots) * 100;
+            fill.style.width = `${percentage}%`;
         }
 
-        // Set Dynamic Copyright Year
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Initialize UI
+        updateCounterUI();
 
-        // Mobile Nav Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            } else {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
-            }
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            });
-        });
-
-        // Package Select Handler
+        // Scroll & Select Package
         function selectPackage(packageName) {
-            const selectElement = document.getElementById('package-select');
-            if (selectElement) {
-                selectElement.value = packageName;
-            }
-            const contactSection = document.getElementById('contact');
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-            }
+            const packageDropdown = document.getElementById('packageSelect');
+            packageDropdown.value = packageName;
+            document.getElementById('inquire').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Form Submit Handler
-        function handleFormSubmit(event) {
-            event.preventDefault();
+        // Form Submission
+        document.getElementById('clientInquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            const nameInput = document.getElementById('name').value;
-            const packageInput = document.getElementById('package-select').value;
-            
-            if (openSpots > 5) {
-                openSpots -= 5;
-                updateAllSpotCounters();
+            const name = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const packageChoice = document.getElementById('packageSelect').value;
+
+            if (availableSpots > 0) {
+                availableSpots -= 1;
+                updateCounterUI();
             }
 
-            document.getElementById('client-name-span').textContent = nameInput;
-            document.getElementById('selected-tier-span').textContent = packageInput || 'requested scope';
+            document.getElementById('clientInquiryForm').style.display = 'none';
+            const successBox = document.getElementById('formSuccessMessage');
+            successBox.style.display = 'block';
             
-            document.getElementById('inquiry-form').classList.add('hidden');
-            document.getElementById('form-success').classList.remove('hidden');
-        }
-
-        // Reset Form Handler
-        function resetForm() {
-            document.getElementById('inquiry-form').reset();
-            document.getElementById('inquiry-form').classList.remove('hidden');
-            document.getElementById('form-success').classList.add('hidden');
-        }
-
-        // Hosting Instructions Collapsible
-        function toggleHostingDetails() {
-            const content = document.getElementById('hosting-content');
-            const toggleText = document.getElementById('toggle-text');
-            const toggleIcon = document.getElementById('toggle-icon');
-
-            content.classList.toggle('hidden');
-            if (content.classList.contains('hidden')) {
-                toggleText.textContent = "Show Hosting Instructions";
-                toggleIcon.classList.remove('fa-chevron-up');
-                toggleIcon.classList.add('fa-chevron-down');
-            } else {
-                toggleText.textContent = "Hide Hosting Instructions";
-                toggleIcon.classList.remove('fa-chevron-down');
-                toggleIcon.classList.add('fa-chevron-up');
-            }
-        }
-
-        // Initialize spot counts on load
-        updateAllSpotCounters();
+            const subject = encodeURIComponent(`New Inquiry from ${name} - ${packageChoice}`);
+            const body = encodeURIComponent(`Client Name: ${name}\nEmail: ${email}\nPackage: ${packageChoice}\n\nForm submitted via website.`);
+            
+            window.location.href = `mailto:contact.jfva@gmail.com?subject=${subject}&body=${body}`;
+        });
     </script>
 </body>
 </html>
