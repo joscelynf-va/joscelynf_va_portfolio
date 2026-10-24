@@ -91,7 +91,7 @@
                 <div class="hidden md:flex items-center gap-4">
                     <span class="text-xs font-bold text-stone-800 bg-brand-sageLight border border-brand-sage/30 px-3 py-1.5 rounded-full flex items-center gap-1.5">
                         <i class="fa-solid fa-user-check text-brand-sage"></i>
-                        <span id="header-spots-count">2</span>/5 Q4 Spots Open
+                        <span id="header-spots-count">5</span>/5 Q4 Spots Open
                     </span>
                     <a href="#contact" onclick="selectPackage('General Consultation')" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-brand-primary hover:bg-slate-800 shadow-sm transition-all duration-200 transform hover:-translate-y-0.5">
                         Inquire Now <i class="fa-solid fa-paper-plane ml-2 text-xs text-brand-accent"></i>
@@ -112,7 +112,7 @@
             <div class="py-1">
                 <span class="text-xs font-bold text-stone-800 bg-brand-sageLight border border-brand-sage/30 px-3 py-1 rounded-full inline-flex items-center gap-1.5">
                     <i class="fa-solid fa-user-check text-brand-sage"></i>
-                    <span id="mobile-spots-count">2</span> of 5 Q4 Retainer Spots Open
+                    <span id="mobile-spots-count">5</span> of 5 Q4 Retainer Spots Open
                 </span>
             </div>
             <a href="#services" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-100">Services</a>
@@ -716,7 +716,7 @@
                             </div>
                             <div>
                                 <p class="text-xs text-stone-400">Q4 Retainer Availability</p>
-                                <p class="text-amber-400 font-bold"><span class="form-spots-count">5</span> Spots Remaining</p>
+                                <p class="text-amber-400 font-bold"><span class="form-spots-count">2</span> Spots Remaining</p>
                             </div>
                         </div>
                     </div>
@@ -969,8 +969,8 @@
             const nameInput = document.getElementById('name').value;
             const packageInput = document.getElementById('package-select').value;
             
-            if (openSpots > 1) {
-                openSpots -= 1;
+            if (openSpots > 5) {
+                openSpots -= 5;
                 updateAllSpotCounters();
             }
 
